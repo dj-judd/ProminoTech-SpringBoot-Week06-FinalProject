@@ -12,7 +12,7 @@ public interface UserService {
   List<User> getAllUsers();
   
   
-  //READY by ID, handles players by ID, READ by ID
+  //READY by ID, handles users by ID, READ by ID
   User getUserByID(int id);
   
   //UPDATE a user

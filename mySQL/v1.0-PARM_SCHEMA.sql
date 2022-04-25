@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS locations;
 
 CREATE TABLE locations (
   id int unsigned NOT NULL AUTO_INCREMENT,
+  name varchar(45) NOT NULL,
   street varchar(45) NOT NULL,
   city varchar(45) NOT NULL, 
   state varchar(45) NOT NULL,

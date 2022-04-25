@@ -10,7 +10,7 @@ CREATE TABLE locations (
   city varchar(45) NOT NULL, 
   state varchar(45) NOT NULL,
   zip varchar(45) NOT NULL,
-  PRIMARY KEY (location_id)
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE users (
@@ -19,7 +19,7 @@ CREATE TABLE users (
   last_name varchar(45) NOT NULL, 
   email varchar(45) NOT NULL,
   permissions enum('ADMIN', 'SUPER_USER', 'USER') NOT NULL,
-  PRIMARY KEY (location_id),
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE assets (
@@ -31,8 +31,8 @@ CREATE TABLE assets (
   model_number varchar(45) NOT NULL,
   serial_number varchar(45) NOT NULL,
   status enum('GOOD', 'DAMAGED', 'BROKEN') NOT NULL,
-  PRIMARY KEY (location_id),
-  FOREIGN KEY (location_fk) REFERENCES locations (location_pk)
+  PRIMARY KEY (id),
+  FOREIGN KEY (location_fk) REFERENCES locations (id)
 );
 
 CREATE TABLE reservations (
@@ -53,5 +53,5 @@ CREATE TABLE res_assets (
   res_fk int unsigned NOT NULL,
   asset_fk int unsigned NOT NULL,
   FOREIGN KEY (res_fk) REFERENCES reservations (id),
-  FOREIGN KEY (assets_fk) REFERENCES assets (order_pk)
+  FOREIGN KEY (asset_fk) REFERENCES assets (id)
 );

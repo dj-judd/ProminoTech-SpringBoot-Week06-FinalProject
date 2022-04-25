@@ -15,18 +15,15 @@ INSERT INTO locations (name, street, city, state, zip) VALUES('Walmart Global Pe
 
 
 -- Assets
-INSERT INTO assets (common_name, make, model, model_number, serial_number, status) VALUES('VR Microphone', 'Senheiser', 'AMBEO VR 3D Microphone', '507195', '12351v619', 'GOOD');
-INSERT INTO assets (common_name, make, model, model_number, serial_number, status) VALUES('Studio Monitor Speaker', 'KRK', 'Classic 8"', 'CL8G3-NA', '12345v123', 'GOOD');
-INSERT INTO assets (common_name, make, model, model_number, serial_number, status) VALUES('Studio Monitor Speaker', 'KRK', 'Classic 8"', 'CL8G3-NA', '12345v124', 'GOOD');
-INSERT INTO assets (common_name, make, model, model_number, serial_number, status) VALUES('RGB LED Panel Light', 'Aputure', 'amaran p60C', 'AMP60CUS', 'abcd1000', 'GOOD');
-INSERT INTO assets (common_name, make, model, model_number, serial_number, status) VALUES('RGB LED Panel Light', 'Aputure', 'amaran p60C', 'AMP60CUS', 'abcd1002', 'GOOD');
-INSERT INTO assets (common_name, make, model, model_number, serial_number, status) VALUES('RGB LED Panel Light', 'Aputure', 'amaran p60C', 'AMP60CUS', 'abcd1003', 'BROKEN');
-INSERT INTO assets (common_name, make, model, model_number, serial_number, status) VALUES('RGB LED Panel Light', 'Aputure', 'amaran p60C', 'AMP60CUS', 'abcd1004', 'GOOD');
-INSERT INTO assets (common_name, make, model, model_number, serial_number, status) VALUES('RGB LED Panel Light', 'Aputure', 'amaran p60C', 'AMP60CUS', 'abcd1005', 'DAMAGED');
-INSERT INTO assets (common_name, make, model, model_number, serial_number, status) VALUES('RGB LED Panel Light', 'Aputure', 'amaran p60C', 'AMP60CUS', 'abcd1006', 'BROKEN');
-INSERT INTO assets (common_name, make, model, model_number, serial_number, status) VALUES('Studio Camera', 'Blackmagic', 'Studio Camera 4K Pro', 'CINSTUDMFT/G24PDF', 'CAM1101', 'GOOD');
-INSERT INTO assets (common_name, make, model, model_number, serial_number, status) VALUES('Studio Camera', 'Blackmagic', 'Studio Camera 4K Pro', 'CINSTUDMFT/G24PDF', 'CAM1102', 'DAMAGED');
-INSERT INTO assets (common_name, make, model, model_number, serial_number, status) VALUES('Studio Camera', 'Blackmagic', 'Studio Camera 4K Pro', 'CINSTUDMFT/G24PDF', 'CAM1103', 'GOOD');
-
-
---INSERT INTO assets (common_name, make, model, model_number, serial_number, status) VALUES('Common Name', 'Make', 'Model', 'Model Number', 'Serial Number', 'Status');
+INSERT INTO assets (location_fk, common_name, make, model, model_number, serial_number, status) VALUES('4', 'VR Microphone', 'Senheiser', 'AMBEO VR 3D Microphone', '507195', '12351v619', 'GOOD');
+INSERT INTO assets (location_fk, common_name, make, model, model_number, serial_number, status) VALUES('4', 'Studio Monitor Speaker', 'KRK', 'Classic 8"', 'CL8G3-NA', '12345v123', 'GOOD');
+INSERT INTO assets (location_fk, common_name, make, model, model_number, serial_number, status) VALUES('4', 'Studio Monitor Speaker', 'KRK', 'Classic 8"', 'CL8G3-NA', '12345v124', 'GOOD');
+INSERT INTO assets (location_fk, common_name, make, model, model_number, serial_number, status) VALUES('4', 'RGB LED Panel Light', 'Aputure', 'amaran p60C', 'AMP60CUS', 'abcd1000', 'GOOD');
+INSERT INTO assets (location_fk, common_name, make, model, model_number, serial_number, status) VALUES('4', 'RGB LED Panel Light', 'Aputure', 'amaran p60C', 'AMP60CUS', 'abcd1002', 'GOOD');
+INSERT INTO assets (location_fk, common_name, make, model, model_number, serial_number, status) VALUES('4', 'RGB LED Panel Light', 'Aputure', 'amaran p60C', 'AMP60CUS', 'abcd1003', 'BROKEN');
+INSERT INTO assets (location_fk, common_name, make, model, model_number, serial_number, status) VALUES('4', 'RGB LED Panel Light', 'Aputure', 'amaran p60C', 'AMP60CUS', 'abcd1004', 'GOOD');
+INSERT INTO assets (location_fk, common_name, make, model, model_number, serial_number, status) VALUES('4', 'RGB LED Panel Light', 'Aputure', 'amaran p60C', 'AMP60CUS', 'abcd1005', 'DAMAGED');
+INSERT INTO assets (location_fk, common_name, make, model, model_number, serial_number, status) VALUES('4', 'RGB LED Panel Light', 'Aputure', 'amaran p60C', 'AMP60CUS', 'abcd1006', 'BROKEN');
+INSERT INTO assets (location_fk, common_name, make, model, model_number, serial_number, status) VALUES('4', 'Studio Camera', 'Blackmagic', 'Studio Camera 4K Pro', 'CINSTUDMFT/G24PDF', 'CAM1101', 'GOOD');
+INSERT INTO assets (location_fk, common_name, make, model, model_number, serial_number, status) VALUES('4', 'Studio Camera', 'Blackmagic', 'Studio Camera 4K Pro', 'CINSTUDMFT/G24PDF', 'CAM1102', 'DAMAGED');
+INSERT INTO assets (location_fk, common_name, make, model, model_number, serial_number, status) VALUES('4', 'Studio Camera', 'Blackmagic', 'Studio Camera 4K Pro', 'CINSTUDMFT/G24PDF', 'CAM1103', 'GOOD');

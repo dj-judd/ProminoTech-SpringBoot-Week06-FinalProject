@@ -2,6 +2,8 @@ package com.promineo.PARM.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,12 +24,14 @@ public class User {
   private String last_name;
   @Column
   private String email;
+
   
 // Wasn't working. enum was breaking the POST and GET
-//  @Column
-//  private UserPermissions permissions;
-
+  @Enumerated(EnumType.STRING)
   @Column
-  private String permissions;
+  private UserPermissions permissions;
+
+//  @Column
+//  private String permissions;
   
 }

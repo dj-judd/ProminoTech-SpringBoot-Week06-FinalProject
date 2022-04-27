@@ -1,9 +1,9 @@
 -- Users
 INSERT INTO users (first_name, last_name, email, permissions) VALUES('DJ', 'Judd', 'DJJ@aol.com', 'ADMIN');
-INSERT INTO users (first_name, last_name, email, permissions) VALUES('Hektor', 'Attaway', 'HKA@gmail.com', 'USER');
+INSERT INTO users (first_name, last_name, email, permissions) VALUES('Hektor', 'Attaway', 'HKA@gmail.com', 'GUEST');
 INSERT INTO users (first_name, last_name, email, permissions) VALUES('Dave', 'Roberts', 'DR@gmail.com', 'USER');
-INSERT INTO users (first_name, last_name, email, permissions) VALUES('Josh', 'Baxter', 'JB@gmail.com', 'USER');
-INSERT INTO users (first_name, last_name, email, permissions) VALUES('Kenneth', 'Lovette', 'Kenny@gmail.com', 'SUPER_USER');
+INSERT INTO users (first_name, last_name, email, permissions) VALUES('Josh', 'Baxter', 'JB@gmail.com', 'GUEST');
+INSERT INTO users (first_name, last_name, email, permissions) VALUES('Kenneth', 'Lovette', 'Kenny@gmail.com', 'USER');
 
 
 -- Locations

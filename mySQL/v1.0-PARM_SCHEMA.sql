@@ -19,7 +19,7 @@ CREATE TABLE users (
   first_name varchar(45) NOT NULL,
   last_name varchar(45) NOT NULL, 
   email varchar(45) NOT NULL,
-  permissions enum('ADMIN', 'SUPER_USER', 'USER') NOT NULL,
+  permissions enum('ADMIN', 'USER', 'GUEST') NOT NULL,
   PRIMARY KEY (id)
 );
 

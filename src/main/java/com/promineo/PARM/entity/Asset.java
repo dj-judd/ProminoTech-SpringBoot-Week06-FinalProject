@@ -2,9 +2,13 @@ package com.promineo.PARM.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
 
@@ -16,7 +20,10 @@ public class Asset {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
-  @Column
+  
+//Foreign Key Annotations
+  @ManyToOne
+  @JoinColumn
   private int location_fk;
   @Column
   private String common_name;
@@ -29,11 +36,21 @@ public class Asset {
   @Column
   private String serial_number;
   
-// Wasn't working. enum was breaking the POST and GET
-//  @Column
-//  private AssetStatis status;
-
+  @Enumerated(EnumType.STRING)
   @Column
-  private String status;
+  private AssetStatus status;
+
+//  @Column
+//  private String status;
+
+//---------------------------------------------
+//Change enum list to 2 Bools for status
+//
+//Condition (Bool):   True  = Good
+//                    False = Damaged
+//          
+//Operational (Bool): True  = Working
+//                    False = Broken
+//---------------------------------------------
   
 }

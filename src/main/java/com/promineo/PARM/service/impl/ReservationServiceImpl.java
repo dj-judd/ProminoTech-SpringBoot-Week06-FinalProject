@@ -41,7 +41,7 @@ public class ReservationServiceImpl implements ReservationService{
     Reservation existingReservation = reservationRepository.findById(id).orElseThrow(
                         () -> new ResourceNotFoundException("Reservation", "Id", id));
     
-    existingReservation.setRes_date(reservation.getRes_date());
+    existingReservation.setPlanned_checkout_date(reservation.getPlanned_checkout_date());
     existingReservation.setPlanned_checkin_date(reservation.getPlanned_checkin_date());
     existingReservation.setCheckout_date(reservation.getCheckout_date());
     existingReservation.setCheckin_date(reservation.getCheckin_date());

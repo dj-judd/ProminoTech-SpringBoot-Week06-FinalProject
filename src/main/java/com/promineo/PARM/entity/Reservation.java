@@ -1,7 +1,6 @@
 package com.promineo.PARM.entity;
 
-import java.sql.Date;
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +13,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 @Data
@@ -43,20 +45,23 @@ public class Reservation {
   @JoinColumn(name = "user_fk")
   private User user;
   
-  @Column(insertable=true, updatable=true)
-  private LocalDateTime res_date;
+  @Column
+  private java.sql.Timestamp planned_checkout_date;
   
-  @Column(insertable=true, updatable=true)
-  private LocalDateTime planned_checkin_date;
+  @Column
+  private java.sql.Timestamp planned_checkin_date;
   
-  @Column(insertable=true, updatable=true)
-  private LocalDateTime checkout_date;
+  @Column(nullable = true)
+  private java.sql.Timestamp checkout_date;
   
-  @Column(insertable=true, updatable=true)
-  private LocalDateTime checkin_date;
+  @Column(nullable = true)
+  private java.sql.Timestamp checkin_date;
+  
+  @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable=false, updatable=false)
+  private java.sql.Timestamp date_create;
   
   @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable=false, updatable=true)
-  private LocalDateTime create_on;
+  private java.sql.Timestamp date_updated;
   
   @ManyToMany
   @JoinTable(

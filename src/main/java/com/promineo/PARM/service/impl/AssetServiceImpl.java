@@ -42,7 +42,7 @@ public class AssetServiceImpl implements AssetService{
                         () -> new ResourceNotFoundException("Asset", "Id", id));
     
 //    existingAsset.setLocation_fk(asset.getLocation_fk());
-    existingAsset.setLocation(asset.getLocation());
+    existingAsset.setLocation_fk(asset.getLocation_fk());
     existingAsset.setCommon_name(asset.getCommon_name());
     existingAsset.setMake(asset.getMake());
     existingAsset.setModel(asset.getModel());

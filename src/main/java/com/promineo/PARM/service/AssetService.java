@@ -12,7 +12,7 @@ public interface AssetService {
   List<Asset> getAllAssets();
   
   
-  //READY by ID, handles assets by ID, READ by ID
+  //READ by ID, handles assets by ID, READ by ID
   Asset getAssetByID(int id);
   
   //UPDATE a asset

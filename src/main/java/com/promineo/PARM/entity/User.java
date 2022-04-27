@@ -24,14 +24,8 @@ public class User {
   private String last_name;
   @Column
   private String email;
-
-  
-// Wasn't working. enum was breaking the POST and GET
   @Enumerated(EnumType.STRING)
   @Column
   private UserPermissions permissions;
-
-//  @Column
-//  private String permissions;
   
 }

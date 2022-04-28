@@ -1,8 +1,10 @@
 package com.promineo.PARM.entity;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,7 +19,7 @@ public class Location {
   
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Integer id;
   
   @Column
   private String name;
@@ -35,7 +37,7 @@ public class Location {
   private String zip;
   
   
-  @OneToMany(mappedBy="location")
+  @OneToMany(mappedBy = "location", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   private List<Reservation> reservations;
   
 

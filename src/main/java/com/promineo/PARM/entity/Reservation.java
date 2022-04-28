@@ -1,7 +1,7 @@
 package com.promineo.PARM.entity;
 
-import java.sql.Timestamp;
 import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,9 +13,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 @Data
@@ -25,43 +22,43 @@ public class Reservation {
   
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Integer id;
   
 //Foreign Key Annotations
   
 //  @OneToMany
 //  @JoinColumn
-//  private int location_fk;
+//  private Integer location_fk;
   
 //  @OneToMany
 //  @JoinColumn
-//  private int user_fk;
+//  private Integer user_fk;
   
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "location_fk")
+  @ManyToOne(fetch = FetchType.LAZY,  cascade = CascadeType.ALL)
+  @JoinColumn(name = "location_fk", insertable = true, updatable = true, nullable = false)
   private Location location;
   
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "user_fk")
+  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  @JoinColumn(name = "user_fk", insertable = true, updatable = true, nullable = false)
   private User user;
   
   @Column
-  private java.sql.Timestamp planned_checkout_date;
+  private String planned_checkout_date;
   
   @Column
-  private java.sql.Timestamp planned_checkin_date;
+  private String planned_checkin_date;
   
   @Column(nullable = true)
-  private java.sql.Timestamp checkout_date;
+  private String checkout_date;
   
   @Column(nullable = true)
-  private java.sql.Timestamp checkin_date;
+  private String checkin_date;
   
   @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable=false, updatable=false)
-  private java.sql.Timestamp date_create;
+  private String date_create;
   
   @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable=false, updatable=true)
-  private java.sql.Timestamp date_updated;
+  private String date_updated;
   
   @ManyToMany
   @JoinTable(
